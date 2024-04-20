@@ -3,14 +3,14 @@ name: Android CI
 on:
   push:
     branches: [ main ]
-    pull_request:
+  pull_request:
       branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - user: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: set up JDK
         uses: actions/setup-java@v4
