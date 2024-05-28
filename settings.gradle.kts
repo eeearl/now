@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "mnm"
-include(":app")
- 
+rootProject.name = "now"
+include(":androidApp")
+include(":shared")
