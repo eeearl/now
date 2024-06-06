@@ -1,9 +1,14 @@
 package com.eeearl.now
 
-class Greeting {
-    private val platform: Platform = getPlatform()
+import io.ktor.client.HttpClient
+import io.ktor.client.request.get
+import io.ktor.client.statement.bodyAsText
 
-    fun greet(): String {
-        return "Hello, ${platform.name}!"
+class Greeting {
+    private val client = HttpClient()
+
+    suspend fun greet(): String {
+        return client.get("https://ktor.io/docs/")
+            .bodyAsText()
     }
 }
