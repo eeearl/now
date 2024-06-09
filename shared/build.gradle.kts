@@ -33,15 +33,17 @@ kotlin {
             //put your multiplatform dependencies here
             implementation(libs.androidx.runtime)
             implementation(libs.ktor.client.core)
-//            implementation(libs.ktor.client.negotiation)
+            implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.client.json)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.koin.core)
             implementation(libs.koin.test)
+
+            api(libs.androidx.lifecycle.viewmodel)
         }
         androidMain.dependencies {
-            implementation(libs.ktor.client.okhttp)
+            implementation(libs.ktor.client.android)
             implementation(libs.kotlinx.coroutines.android)
         }
         if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
