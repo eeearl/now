@@ -6,7 +6,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class AnimeResponse(
     @SerialName("data")
-    val `data`: List<Anime> = listOf(),
+    val list: List<Anime> = listOf(),
 //    @SerialName("links")
 //    val links: Links = Links(),
 //    @SerialName("meta")
