@@ -1,41 +1,66 @@
-.DS_Store
+# built application files
+*.apk
+*.ap_
 
-# Gradle files
-.gradle/
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+out/
 build/
+.kotlin/*
 
 # Local configuration file (sdk path, etc)
-/local.properties
 local.properties
 
-# Log/OS Files
-*.log
+# Eclipse project files
+.classpath
+.project
 
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
-*.apk
-output.json
+# Windows thumbnail db
+Thumbs.db
 
-# IntelliJ
+# IDEA/Android Studio project files, because
+# the project can be imported from settings.gradle.kts
 *.iml
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+.idea/*
+!.idea/copyright
+!.idea/codeInsightSettings.xml
+# Keep the code styles.
+!/.idea/codeStyles
+/.idea/codeStyles/*
+!/.idea/codeStyles/Project.xml
+!/.idea/codeStyles/codeStyleConfig.xml
+!/.idea/icon*.svg
+# Suppress typo
+!/.idea/dictionaries
+/.idea/dictionaries/*
+!/.idea/dictionaries/dictionary.xml
 
-# Keystore files
-*.jks
-*.keystore
+# Gradle cache
+.gradle
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
+# Sandbox stuff
+_sandbox
 
-# Android Profiling
-*.hprof
+# Android Studio captures folder
+captures/
+Footer
+
+# iOS
+.DS_Store
+xcuserdata
+DerivedData
+
+# bundler
+.bundle/vendor
+
+# Fastlane
+app-ios/fastlane/test_output
+app-ios/fastlane/README.md
+app-ios/fastlane/report.xml
