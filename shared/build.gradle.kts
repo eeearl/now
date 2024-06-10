@@ -16,18 +16,18 @@ kotlin {
         }
     }
 
-    if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
-        listOf(
-            iosX64(),
-            iosArm64(),
-            iosSimulatorArm64()
-        ).forEach {
-            it.binaries.framework {
-                baseName = "shared"
-                isStatic = true
-            }
-        }
-    }
+//    if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
+//        listOf(
+//            iosX64(),
+//            iosArm64(),
+//            iosSimulatorArm64()
+//        ).forEach {
+//            it.binaries.framework {
+//                baseName = "shared"
+//                isStatic = true
+//            }
+//        }
+//    }
 
     sourceSets {
         commonMain.dependencies {
@@ -42,15 +42,24 @@ kotlin {
             implementation(libs.koin.test)
 
             api(libs.androidx.lifecycle.viewmodel)
+
+            /*
+            implementation(libs.coil)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor)
+             */
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.android)
             implementation(libs.kotlinx.coroutines.android)
+            /*
+            implementation(libs.coil.okhttp)
+             */
         }
         if (!Os.isFamily(Os.FAMILY_WINDOWS)) {
-            iosMain.dependencies {
-                implementation(libs.ktor.client.darwin)
-            }
+//            iosMain.dependencies {
+//                implementation(libs.ktor.client.darwin)
+//            }
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

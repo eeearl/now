@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.koin.android.compose)
+    implementation("media.kamel:kamel-image:0.9.5")
 
     testImplementation(libs.junit)
 

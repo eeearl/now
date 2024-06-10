@@ -13,6 +13,7 @@ bin/
 gen/
 out/
 build/
+.kotlin/*
 
 # Local configuration file (sdk path, etc)
 local.properties
@@ -63,8 +64,3 @@ DerivedData
 app-ios/fastlane/test_output
 app-ios/fastlane/README.md
 app-ios/fastlane/report.xml
-
-# Android Key
-app-android/src/prod/google-services.json
-keystore.properties
-droidkaigi2023.keystore
