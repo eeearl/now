@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.eeearl.mnm"
+    namespace = "com.eeearl.now"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.eeearl.mnm"
+        applicationId = "com.eeearl.now"
         minSdk = 29
         targetSdk = 34
         versionCode = 1
@@ -22,6 +22,10 @@ android {
     }
 
     buildTypes {
+        getByName("debug") {
+            isMinifyEnabled = false
+            isDebuggable = true
+        }
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
@@ -68,7 +72,6 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.koin.android.compose)
-    implementation("media.kamel:kamel-image:0.9.5")
 
     testImplementation(libs.junit)
 

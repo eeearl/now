@@ -1,4 +1,4 @@
-package com.eeearl.mnm.di
+package com.eeearl.now.di
 
 import com.eeearl.now.viewmodel.TopViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel

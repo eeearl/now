@@ -6,9 +6,9 @@ import kotlinx.serialization.Serializable
 
 @Immutable
 @Serializable
-data class AnimeResponse(
-    @SerialName("data")
-    val list: List<Anime> = listOf(),
-    @SerialName("pagination")
-    val pagination: Pagination?
+data class Pagination(
+    @SerialName("last_visible_page")
+    val lastVisiblePage: Int,
+    @SerialName("has_next_page")
+    val hasNextPage: Boolean
 )

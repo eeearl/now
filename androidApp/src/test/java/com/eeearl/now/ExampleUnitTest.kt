@@ -1,4 +1,4 @@
-package com.eeearl.mnm
+package com.eeearl.now
 
 import org.junit.Test
 

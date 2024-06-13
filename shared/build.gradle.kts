@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlinSerialization)
+    alias(libs.plugins.jetbrains.compose)
 }
 
 kotlin {
@@ -36,6 +37,7 @@ kotlin {
             implementation(libs.ktor.client.core)
             implementation(libs.ktor.client.content.negotiation)
             implementation(libs.ktor.client.json)
+            implementation(libs.ktor.client.logging)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.koin.core)
@@ -48,6 +50,16 @@ kotlin {
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor)
              */
+            implementation(libs.kamel.image)
+
+            // Jetbrains Compose
+            implementation(compose.ui)
+            implementation(compose.runtime)
+            implementation(compose.foundation)
+            implementation(compose.material3)
+            implementation(compose.components.resources)
+
+            implementation(libs.napier)
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.android)

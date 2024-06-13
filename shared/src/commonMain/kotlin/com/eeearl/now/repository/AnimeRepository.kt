@@ -5,18 +5,21 @@ import com.eeearl.now.httpClient
 import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.url
+import io.ktor.util.AttributeKey
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-interface RemoteRepository {
-    suspend fun getTopList(): Flow<AnimeResponse>
+interface AnimeRepository {
+    suspend fun getTopAnimeList(page: Int): Flow<AnimeResponse>
 }
-class RemoteRepositoryImpl : RemoteRepository {
-    override suspend fun getTopList(): Flow<AnimeResponse> = flow {
+class AnimeRepositoryImpl : AnimeRepository {
+    override suspend fun getTopAnimeList(
+        page: Int
+    ): Flow<AnimeResponse> = flow {
         val response = httpClient.get {
             url("https://api.jikan.moe/v4/top/anime")
+            attributes.put(AttributeKey("page"), page)
         }.body<AnimeResponse>()
         emit(response)
     }
-        //.flowOn(provideDispatcher())
 }

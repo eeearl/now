@@ -1,4 +1,4 @@
-package com.eeearl.mnm.ui.theme
+package com.eeearl.now.ui.theme
 
 import android.app.Activity
 import android.os.Build

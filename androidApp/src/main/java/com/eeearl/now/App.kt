@@ -1,7 +1,7 @@
-package com.eeearl.mnm
+package com.eeearl.now
 
 import android.app.Application
-import com.eeearl.mnm.di.androidModule
+import com.eeearl.now.di.androidModule
 import com.eeearl.now.di.appModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
