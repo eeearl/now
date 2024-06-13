@@ -17,7 +17,7 @@ fun NowTopBar(
     modifier: Modifier,
     title: String,
     backgroundColor: Color = MaterialTheme.colorScheme.background,
-    scrollBehavior: TopAppBarScrollBehavior?,
+    scrollBehavior: TopAppBarScrollBehavior? = null,
 ) {
     TopAppBar(
         title = {

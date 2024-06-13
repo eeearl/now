@@ -15,9 +15,9 @@ data class Images(
 @Serializable
 data class Jpg(
     @SerialName("image_url")
-    val imageUrl: String?,
+    val imageUrl: String? = null,
     @SerialName("small_image_url")
-    val smallImageUrl: String?,
+    val smallImageUrl: String? = null,
     @SerialName("large_image_url")
-    val largeImageUrl: String?,
+    val largeImageUrl: String? = null,
 )
