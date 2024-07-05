@@ -60,6 +60,8 @@ kotlin {
             implementation(compose.components.resources)
 
             implementation(libs.napier)
+
+            implementation(libs.navigation.compose)
         }
         androidMain.dependencies {
             implementation(libs.ktor.client.android)

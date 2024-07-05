@@ -32,6 +32,8 @@ fun CharacterScreen() {
             NowTopBar(
                 modifier = Modifier,
                 title = "Now",
+                canNavigateBack = false,
+                navigateUp = {  }
             )
         },
         bottomBar = {

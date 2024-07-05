@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.eeearl.now.ui.character.CharacterScreen
+import com.eeearl.now.ui.feature.CharacterNav
 import com.eeearl.now.ui.theme.NowTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +22,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
 //                    MainScreen()
-                    CharacterScreen()
+//                    CharacterScreen()
+                    CharacterNav()
                 }
             }
         }

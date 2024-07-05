@@ -72,6 +72,8 @@ dependencies {
     implementation(libs.androidx.material3)
 
     implementation(libs.koin.android.compose)
+    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.androidx.navigation.compose)
 
     testImplementation(libs.junit)
 

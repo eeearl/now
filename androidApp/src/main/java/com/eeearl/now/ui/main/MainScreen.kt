@@ -23,29 +23,51 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.composable
 import com.eeearl.now.ui.component.GridItem
 import com.eeearl.now.ui.component.NowTopBar
 import com.eeearl.now.ui.component.ProgressIndicator
 import com.eeearl.now.ui.theme.NowTheme
 import com.eeearl.now.viewmodel.TopViewModel
 import org.koin.androidx.compose.koinViewModel
+object MainNavGraph {
+    const val main= "main"
+}
+
+fun NavGraphBuilder.mainNavGraph(
+    navigateSetting: () -> Unit
+) {
+    composable(
+        route = MainNavGraph.main
+    ) {
+        MainScreen(
+            navigateSetting = navigateSetting
+        )
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen() {
+fun MainScreen(
+    navigateSetting: () -> Unit
+) {
     val viewModel = koinViewModel<TopViewModel>()
     val uiState by viewModel.uiState.collectAsState()
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(rememberTopAppBarState())
 
     val scope = rememberCoroutineScope()
-
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             NowTopBar(
                 modifier = Modifier,
                 title = "Now",
-                scrollBehavior = scrollBehavior
+                scrollBehavior = scrollBehavior,
+                canNavigateBack = false,
+                navigateUp = {
+
+                }
             )
         },
         bottomBar = {
