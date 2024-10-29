@@ -5,12 +5,10 @@ on:
     types: [opened, ready_for_review]
 
 jobs:
-  assign:
+  add-reviews:
     runs-on: ubuntu-latest
     steps:
-      - name: condition 1
-        run: echo ${{ github.actor }}
-      - uses: hkusu/review-assign-action@v1
+      - uses: kentaro-m/auto-assign-action@v1.1.0
         with:
-          assignees: ${{ github.actor }}
-          reviewers: eeearl
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: ".github/auto_assign_ids.yml"
