@@ -8,6 +8,8 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     steps:
+      - name: condition 1
+        run: echo ${{ github.actor }}
       - uses: hkusu/review-assign-action@v1
         with:
           assignees: ${{ github.actor }}
