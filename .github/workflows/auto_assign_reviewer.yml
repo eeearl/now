@@ -6,13 +6,15 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Set Assignee
         run: |
           assignee_count=$(cat ${{ github.event_path }} | jq '.pull_request.assignees | length')
           if [[ 0 == $assignee_count ]]; then
             curl -X POST \
               -H "Content-Type: application/json" \
-              -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Authorization: token ${{ secrets.REVIEW_TOKEN }}" \
               -d "{ \"assignees\": \"${{ github.actor }}\" }" \
               https://api.github.com/repos/${{ github.repository }}/issues/${{ github.event.pull_request.number }}/assignees
           fi
@@ -23,6 +25,6 @@ jobs:
           reviewers=$(echo "\"${REVIEWERS// /}\"" | jq 'split(",") | .-["${{ github.actor }}"]')
           curl -X POST \
                 -H "Content-Type: application/json" \
-                -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                -H "Authorization: token ${{ secrets.REVIEW_TOKEN }}" \
                 -d "{ \"reviewers\": $reviewers }" \
                 https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/requested_reviewers
