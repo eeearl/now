@@ -22,7 +22,7 @@ androidxLifecycle = "2.8.7"
 compose-plugin = "1.6.11"
 voyager = "1.1.0-beta03"
 navigationRuntimeKtx = "2.7.7"
-navigationComposeVersion = "2.7.7"
+navigationComposeVersion = "2.8.3"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
