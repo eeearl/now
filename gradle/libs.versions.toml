@@ -20,7 +20,7 @@ runtime = "1.7.5"
 koin = "3.5.6"
 androidxLifecycle = "2.8.7"
 compose-plugin = "1.6.11"
-voyager = "1.1.0-beta02"
+voyager = "1.1.0-beta03"
 navigationRuntimeKtx = "2.7.7"
 navigationComposeVersion = "2.7.7"
 
